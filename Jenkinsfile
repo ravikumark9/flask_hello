@@ -1,6 +1,6 @@
 node {
 	checkout scm
-	docker.withRegistry('docker.io', 'dockerhub') {
+	docker.withRegistry('https://registry.dockerhub.com', 'dockerhub') {
 		def customImage = docker.build("ravi/flaskapp")
 		customImage.push()
 	}
