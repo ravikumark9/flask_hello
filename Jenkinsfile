@@ -11,7 +11,7 @@ pipeline
         PROJECT = 'flask_hello'
         IMAGE = 'flask_hello:latest'
         ECRURL = '321524980494.dkr.ecr.us-east-1.amazonaws.com'
-        ECRCRED = 'ecr:eu-central-1:awsecr'
+        ECRCRED = 'ecr:us-east-1:awsecr'
     }
     stages
     {
