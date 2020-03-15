@@ -62,10 +62,10 @@ pipeline
                 {
                     // login to ECR - for now it seems that that the ECR Jenkins plugin is not performing the login as expected. I hope it will in the future.
                     //sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://console.aws.amazon.com/ecr/repositories?region=us-east-1||')")
-                    sh("eval \$(aws ecr get-login --registry-ids 514433652690 --region us-east-1)")
+                    //sh("eval \$(aws ecr get-login --registry-ids 514433652690 --region us-east-1)")
                     // Push the Docker image to ECR
                     //docker.withRegistry(ECRURL, ECRCRED)
-                    docker.withRegistry([url: "ECRURL",credentialsId: "$ECRCRED"])
+                    docker.withRegistry([url: "$ECRURL",credentialsId: "$ECRCRED"])
                     {
                         docker.image(IMAGE).push()
                     }
