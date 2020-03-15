@@ -22,8 +22,10 @@ pipeline
                 {
                     s3Download(file:'tests3.txt', bucket:'testjenkinsdocker', path:'', force:true)
                 }
-                   sh 'mv /var/lib/jenkins/workspace/flask_hello/tests3.txt/tests3.txt /var/lib/jenkins/workspace/flask_hello/'
-                   sh 'rm -rf /var/lib/jenkins/workspace/flask_hello/tests3.txt'
+                   sh 'cp /var/lib/jenkins/workspace/flask_hello/tests3.txt /var/lib/jenkins/workspace/'
+                   sh 'rm -rf /var/lib/jenkins/workspace/flask_hello/tests3.txt/'
+                   sh 'mv /var/lib/jenkins/workspace/tests3.txt /var/lib/jenkins/workspace/flask_hello/'
+                   sh 'chown jenkins:jenkins /var/lib/jenkins/workspace/flask_hello/tests3.txt'
             }
         }
     
