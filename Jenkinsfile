@@ -25,10 +25,8 @@ pipeline
                    sh 'mv copys3file/tests3.rtf/tests3.txt rr/'
             }
         }
-    }
-    stages
-    {
-        stage('Build preparations')
+    
+      stage('Build preparations')
         {
             steps
             {
