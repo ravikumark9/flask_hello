@@ -20,7 +20,7 @@ pipeline
             steps {
                 withAWS(region:'us-east-1',credentials:'awscred')\
                 {
-                    s3Download(file:'tests3.txt', bucket:'testjenkinsdocker', path:'', force:true)
+                    s3Download(file:'tests3.txt', bucket:'testjenkinsdocker1', path:'', force:true)
                 }
                    sh 'cp /var/lib/jenkins/workspace/flask_hello/tests3.txt/tests3.txt /var/lib/jenkins/workspace/'
                    sh 'rm -rf /var/lib/jenkins/workspace/flask_hello/tests3.txt/'
