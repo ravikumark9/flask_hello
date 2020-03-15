@@ -10,7 +10,7 @@ pipeline
         VERSION = 'latest'
         PROJECT = 'flask_hello'
         IMAGE = 'flask_hello:latest'
-        ECRURL = '514433652690.dkr.ecr.us-east-1.amazonaws.com/flask_hello'
+        ECRURL = '514433652690.dkr.ecr.us-east-1.amazonaws.com'
         ECRCRED = 'ecr:us-east-1:awscred'
     }
     stages
@@ -64,7 +64,8 @@ pipeline
                     //sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://console.aws.amazon.com/ecr/repositories?region=us-east-1||')")
                     sh("eval \$(aws ecr get-login --registry-ids 514433652690 --region us-east-1)")
                     // Push the Docker image to ECR
-                    docker.withRegistry(ECRURL, ECRCRED)
+                    //docker.withRegistry(ECRURL, ECRCRED)
+                    docker.withRegistry([url: "ECRURL",credentialsId: "$ECRCRED"]
                     {
                         docker.image(IMAGE).push()
                     }
