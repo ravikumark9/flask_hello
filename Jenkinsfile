@@ -22,7 +22,7 @@ pipeline
                 {
                     s3Download(file:'tests3.rtf', bucket:'testings3fileaccessinjenkins', path:'', force:true)
                 }
-                   sh 'mv copys3file/tests3.rtf/tests3.txt rr/'
+                   sh 'mv /var/lib/jenkins/workspace/copys3file/tests3.rtf/tests3.txt /var/lib/jenkins/workspace/rr/'
             }
         }
     
