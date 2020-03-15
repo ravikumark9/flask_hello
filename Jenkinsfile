@@ -65,7 +65,7 @@ pipeline
                     //sh("eval \$(aws ecr get-login --registry-ids 514433652690 --region us-east-1)")
                     // Push the Docker image to ECR
                     //docker.withRegistry(ECRURL, ECRCRED)
-                    docker.withRegistry("$ECRURL","$ECRCRED"])
+                    docker.withRegistry("$ECRURL","$ECRCRED")
                     {
                         docker.image(IMAGE).push()
                     }
