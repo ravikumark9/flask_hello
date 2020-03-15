@@ -10,7 +10,7 @@ pipeline
         VERSION = 'latest'
         PROJECT = 'flask_hello'
         IMAGE = 'flask_hello:latest'
-        ECRURL = '321524980494.dkr.ecr.us-east-1.amazonaws.com/flask_hello'
+        ECRURL = '321524980494.dkr.ecr.us-east-1.amazonaws.com'
         ECRCRED = 'awscred'
     }
     stages
@@ -61,7 +61,7 @@ pipeline
                 script
                 {
                     // login to ECR - for now it seems that that the ECR Jenkins plugin is not performing the login as expected. I hope it will in the future.
-                    sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://console.aws.amazon.com/ecr/repositories?region=us-east-1||')")
+                    sh("eval \$(aws ecr get-login --no-include-email | sed 's|https://console.aws.amazon.com/ecr/repositories?region=us-east-1')")
                     // Push the Docker image to ECR
                     docker.withRegistry(ECRURL, ECRCRED)
                     {
