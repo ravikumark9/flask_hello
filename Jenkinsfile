@@ -20,9 +20,9 @@ pipeline
             steps {
                 withAWS(region:'us-east-1',credentials:'awscred')\
                 {
-                    s3Download(file:'tests3.rtf', bucket:'testings3fileaccessinjenkins', path:'', force:true)
+                    s3Download(file:'tests3.txt', bucket:'testjenkinsdocker', path:'', force:true)
                 }
-                   sh 'mv /var/lib/jenkins/workspace/flask_hello/tests3.rtf/tests3.txt /var/lib/jenkins/workspace/rr/'
+                   sh 'mv /var/lib/jenkins/workspace/flask_hello/tests3.txt /var/lib/jenkins/workspace/rr/'
             }
         }
     
