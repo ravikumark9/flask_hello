@@ -50,7 +50,7 @@ pipeline
                 script
                 {
                     // Build the docker image using a Dockerfile
-                    docker.build("$IMAGE:${env.BUILD_ID}")
+                    docker.build("$IMAGE")
                 }
             }
         }
