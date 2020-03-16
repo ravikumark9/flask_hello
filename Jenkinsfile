@@ -10,7 +10,7 @@ pipeline
         VERSION = 'latest'
         PROJECT = 'flask_hello'
         IMAGE = 'flask_hello:latest'
-        ECRURL = 'http://975853944497.dkr.ecr.us-east-1.amazonaws.com/'
+        ECRURL = '138862544691.dkr.ecr.us-east-1.amazonaws.com/flask_hello/'
         ECRCRED = 'ecr:us-east-1:awscred'
     }
     stages
@@ -20,7 +20,7 @@ pipeline
             steps {
                 withAWS(region:'us-east-1',credentials:'awscred')\
                 {
-                    s3Download(file:'tests3.txt', bucket:'testjenkinsdocker1', path:'test/tests3.txt', force:true)
+                    s3Download(file:'tests3.txt', bucket:'testjenkinsdocker2', path:'test/tests3.txt', force:true)
                 }
                    //sh 'cp /var/lib/jenkins/workspace/flask_hello/tests3.txt/tests3.txt /var/lib/jenkins/workspace/'
                    //sh 'rm -rf /var/lib/jenkins/workspace/flask_hello/tests3.txt/'
