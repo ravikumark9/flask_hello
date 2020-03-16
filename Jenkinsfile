@@ -41,7 +41,7 @@ pipeline
                     shortCommitHash = gitCommitHash.take(2)
                     //calculate a sample version tag 
                     //VERSION = "${PROJECT}_${BUILD_ID}_${shortCommitHash}" 
-                    VERSION = "${PROJECT}_${BUILD_ID}
+                    VERSION = "${PROJECT}_${BUILD_ID}"
                     // set the build display name
                     //currentBuild.displayName = "#${BUILD_ID}-${VERSION}"
                     currentBuild.displayName = "#${VERSION}"
