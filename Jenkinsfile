@@ -38,7 +38,7 @@ pipeline
                 {
                     // calculate GIT lastest commit short-hash
                     gitCommitHash = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                    shortCommitHash = gitCommitHash.take(7)
+                    shortCommitHash = gitCommitHash.take(2)
                     //calculate a sample version tag 
                     VERSION = "${PROJECT}_${BUILD_ID}_${shortCommitHash}"           
                     // set the build display name
