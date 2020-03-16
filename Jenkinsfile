@@ -10,7 +10,7 @@ pipeline
         VERSION = 'latest'
         PROJECT = 'flask_hello'
         IMAGE = 'flask_hello:latest'
-        ECRURL = '138862544691.dkr.ecr.us-east-1.amazonaws.com/flask_hello/'
+        ECRURL = 'http://138862544691.dkr.ecr.us-east-1.amazonaws.com/flask_hello/'
         ECRCRED = 'ecr:us-east-1:awscred'
     }
     stages
